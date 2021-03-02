@@ -20,7 +20,7 @@ struct msgbuf
 
 */
 
-/*
+
 
 int main(int argc, char* argv[]) // Correspond à notre programme client.
 {
@@ -108,4 +108,3 @@ int main(int argc, char* argv[]) // Correspond à notre programme client.
   return 0;
 }
 
-*/
