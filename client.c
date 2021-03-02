@@ -20,6 +20,8 @@ struct msgbuf
 
 */
 
+/*
+
 int main(int argc, char* argv[]) // Correspond à notre programme client.
 {
   if(argc != 5) // On a besoin de 5 arguments sur la ligne de commande.
@@ -105,3 +107,5 @@ int main(int argc, char* argv[]) // Correspond à notre programme client.
 
   return 0;
 }
+
+*/
