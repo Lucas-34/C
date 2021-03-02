@@ -5,7 +5,7 @@
 #include <sys/sem.h>
 #include <sys/shm.h>
 #include <stdlib.h>
-
+/*
 int main(int argc, char * argv[])
 {
   if (argc != 2)
@@ -34,20 +34,21 @@ int main(int argc, char * argv[])
   semop(idSem, op, 1);
 
 
+  printf("valeur du sémaphore avant blocage : %d\n", semctl(idSem, 0, GETVAL)); // 0 est le n° sémaphore
   printf("bloqué\n");
   fflush(stdout);
-  // Z pour se bloquer jusqu'à ce que le sémaphore soit à 0
-  op[0].sem_num = 0;  // n° de sémaphore
-  op[0].sem_op = 0;    // Z : bloqué en attendant que le sémaphore soit revenu à 0
-  op[0].sem_flg = 0;  // flag
+  // Z pour bloquer jusqu'à ce que le sémaphore soit à 0
+  op[0].sem_num = 0;   // n° de sémaphore
+  op[0].sem_op = 0;    // Z(0) : bloqué en attendant que le sémaphore soit revenu à 0
+  op[0].sem_flg = 0;   // flag à 0
   semop(idSem, op, 1);
 
 
   printf("débloqué !\n");
+  printf("valeur du sémaphore après déblocage : %d\n", semctl(idSem, 0, GETVAL)); // 0 est le n° sémaphore
+  printf("bloqué\n");
   fflush(stdout);
 
-  // destruction :
-  if(semctl(idSem, 0, IPC_RMID, NULL) == -1) { perror(" erreur semctl : "); }
- 
   return 0;
 }
+*/

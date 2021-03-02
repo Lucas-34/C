@@ -6,7 +6,7 @@
 #include <sys/shm.h>
 #include <stdlib.h>
 
-/*
+
 
 int main(int argc, char * argv[])
 {
@@ -35,10 +35,10 @@ int main(int argc, char * argv[])
 
   semop(idSem, op, 1);
 
-  // destruction :
-  if(semctl(idSem, 0, IPC_RMID, NULL) == -1) { perror(" erreur semctl : "); }
+  printf("valeur du sémaphore : %d\n", semctl(idSem, 0, GETVAL)); // 0 est le n° sémaphore
+  printf("bloqué\n");
+  fflush(stdout);
 
   return 0;
 }
 
-*/
