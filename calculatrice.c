@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-/* test 3
+/*
 
 int main(int argc, char* argv[]) // Correspond à notre programme calculatrice
 {
