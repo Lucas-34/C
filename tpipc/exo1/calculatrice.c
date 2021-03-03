@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-/*
+
 
 int main(int argc, char* argv[]) // Correspond à notre programme calculatrice
 {
@@ -112,4 +112,3 @@ int main(int argc, char* argv[]) // Correspond à notre programme calculatrice
   return 0;
 }
 
-*/
