@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 
   struct sembuf operation[1];
 
-  // On définit une opération V (associée à la valeur 1):
+  // On définit une opération P (associée à la valeur -1):
   operation[0].sem_num = 0;
   operation[0].sem_op = -1; // A l'endroit où les process (joueurs) doivent se réunir, chacun d'entre eux incrémentera le compteur du sémaphore de 1.
   operation[0].sem_flg = 0;
@@ -54,8 +54,6 @@ int main(int argc, char* argv[])
   fflush(stdout);
   printf("joueur : Le compteur après le déblocage des process vaut %d. \n", semctl(idSem, 0, GETVAL));
   fflush(stdout);
-
-  semctl(idSem, 0, IPC_RMID); // On détruit le sémaphore car il ne nous sert plus.
 
   return 0;
 }
