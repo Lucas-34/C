@@ -21,9 +21,9 @@ int main(int argc, char* argv[]) // Programme 2 (P2) qui réalise la tâche 2.
 
     int idMem = shmget(cle, 1*sizeof(int), IPC_CREAT | 0666);
 
-    if (idMem == -1)
+    if(idMem == -1)
     {
-        perror("Echec de l'exécution de la fonction shmget.");
+        perror("Echec de l'exécution de la fonction shmget");
 
         exit(-1);
     }
@@ -32,9 +32,9 @@ int main(int argc, char* argv[]) // Programme 2 (P2) qui réalise la tâche 2.
 
     int idSem = semget(cle, 1, IPC_CREAT | 0600);
 
-    if (idSem == -1)
+    if(idSem == -1)
     {
-        perror("Echec de l'exécution de la fonction semget.");
+        perror("Echec de l'exécution de la fonction semget");
 
         exit(-1);
     }
@@ -54,9 +54,9 @@ int main(int argc, char* argv[]) // Programme 2 (P2) qui réalise la tâche 2.
     operation[0].sem_op = -1;
     operation[0].sem_flg = 0;
 
-    if (semop(idSem, operation, 1) == -1)
+    if(semop(idSem, operation, 1) == -1)
     {
-        perror("Echec de l'exécution de la fonction semop.");
+        perror("Echec de l'exécution de la fonction semop");
 
         exit(-1);
     }

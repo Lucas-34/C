@@ -6,9 +6,9 @@
 #include <sys/shm.h>
 #include <stdlib.h>
 
-int main(int argc, char* argv[]) // Programme 1 (P1) qui réalise la tâche 1.
+int main(int argc, char* argv[])
 {
-    if (argc != 2)
+    if(argc != 2)
     {
         printf("Les arguments sont invalides. Ils doivent être: '%s fichier_de_référence. \n", argv[0]);
 
@@ -21,9 +21,9 @@ int main(int argc, char* argv[]) // Programme 1 (P1) qui réalise la tâche 1.
 
     int idMem = shmget(cle, 1*sizeof(int), IPC_CREAT | 0666); // On passe en paramètre la taille d'un tableau d'1 entier. Comme ce tableau est l'unique donnée dans la mémoire partagée, il y a une correspondance entre les deux: la mémoire partagée est allouée à cet entier.
 
-    if (idMem == -1)
+    if(idMem == -1)
     {
-        perror("Echec de l'exécution de la fonction shmget.");
+        perror("Echec de l'exécution de la fonction shmget");
 
         exit(-1);
     }
@@ -32,9 +32,9 @@ int main(int argc, char* argv[]) // Programme 1 (P1) qui réalise la tâche 1.
 
     int idSem = semget(cle, 1, IPC_CREAT | 0600);
 
-    if (idSem == -1)
+    if(idSem == -1)
     {
-        perror("Echec de l'exécution de la fonction semget.");
+        perror("Echec de l'exécution de la fonction semget");
 
         exit(-1);
     }
@@ -54,9 +54,9 @@ int main(int argc, char* argv[]) // Programme 1 (P1) qui réalise la tâche 1.
 
     semop(idSem, operation, 1);
 
-    if (semop(idSem, operation, 1) == -1)
+    if(semop(idSem, operation, 1) == -1)
     {
-        perror("Echec de l'exécution de la fonction semop.");
+        perror("Echec de l'exécution de la fonction semop");
 
         exit(-1);
     }
