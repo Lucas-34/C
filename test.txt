@@ -1,2 +1,0 @@
-Bonjour. 
-Ceci est un fichier de test pour voir si mon programme fonctionne.
